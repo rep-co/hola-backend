@@ -2,7 +2,9 @@ import IdentifiedCollections
 
 extension Pack {
   public static let all: IdentifiedArrayOf<Self> = [
-    .acquaintanceship
+    .acquaintanceship,
+    .couple,
+    .frends
   ]
 }
 
