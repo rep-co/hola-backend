@@ -1,30 +1,40 @@
+import CasePaths
 import Packs
+import Tagged
+import Utils
 import Vapor
+import VaporRouting
 
-public struct PackController: RouteCollection {
-  public init() {}
+@CasePathable
+public enum PackRoute {
+  case previews
+  case pack(id: Pack.ID)
+}
 
-  public func boot(routes: RoutesBuilder) throws {
-    let packs = routes.grouped("packs")
-    packs.get(use: self.previews)
-    packs.group(":id") { pack in
-      pack.get(use: self.pack)
-    }
+public let packRouter = OneOf {
+  Route(/PackRoute.previews) {
+    Path { "packs" }
   }
 
-  @Sendable
-  private func previews(req: Request) async -> [PackPreview] {
-    PackPreview.all.elements
+  Route(TaggedConversion().map(/PackRoute.pack)) {
+    Path {
+      "packs"
+      Digits()
+    }
   }
+}
 
-  @Sendable
-  private func pack(req: Request) async throws -> Pack {
-    guard let id = req.parameters.get("id", as: Pack.ID.self) else {
-      throw Abort(.badRequest)
-    }
-    guard let pack = Pack.all[id: id] else {
-      throw Abort(.notFound)
-    }
+public func packHandler(
+  request: Request,
+  route: PackRoute
+) async throws -> any AsyncResponseEncodable {
+  switch route {
+  case .previews:
+    return PackPreview.all.elements
+
+  case let .pack(id):
+    guard let pack = Pack.all[id: id]
+    else { throw Abort(.notFound) }
     return pack
   }
 }

@@ -12,13 +12,16 @@ let package = Package(
     .package(url: "https://github.com/vapor/vapor.git", from: "4.83.1"),
     .package(url: "https://github.com/pointfreeco/swift-tagged", from: "0.10.0"),
     .package(url: "https://github.com/pointfreeco/swift-identified-collections", from: "1.0.0"),
+    .package(url: "https://github.com/pointfreeco/vapor-routing", from: "0.1.3"),
   ],
   targets: [
     .executableTarget(
       name: "App",
       dependencies: [
         "PackController",
+        "DevelopersController",
         .product(name: "Vapor", package: "vapor"),
+        .product(name: "VaporRouting", package: "vapor-routing"),
       ],
       swiftSettings: [
         .enableExperimentalFeature("StrictConcurrency=complete")
@@ -38,7 +41,40 @@ let package = Package(
       name: "PackController",
       dependencies: [
         "Packs",
+        "Utils",
         .product(name: "Vapor", package: "vapor"),
+        .product(name: "VaporRouting", package: "vapor-routing"),
+      ],
+      swiftSettings: [
+        .enableExperimentalFeature("StrictConcurrency=complete")
+      ]
+    ),
+    .target(
+      name: "Developers",
+      dependencies: [
+        .product(name: "Tagged", package: "swift-tagged"),
+        .product(name: "IdentifiedCollections", package: "swift-identified-collections"),
+      ],
+      swiftSettings: [
+        .enableExperimentalFeature("StrictConcurrency=complete")
+      ]
+    ),
+    .target(
+      name: "DevelopersController",
+      dependencies: [
+        "Developers",
+        .product(name: "Vapor", package: "vapor"),
+        .product(name: "VaporRouting", package: "vapor-routing"),
+      ],
+      swiftSettings: [
+        .enableExperimentalFeature("StrictConcurrency=complete")
+      ]
+    ),
+    .target(
+      name: "Utils",
+      dependencies: [
+        .product(name: "Tagged", package: "swift-tagged"),
+        .product(name: "VaporRouting", package: "vapor-routing"),
       ],
       swiftSettings: [
         .enableExperimentalFeature("StrictConcurrency=complete")
