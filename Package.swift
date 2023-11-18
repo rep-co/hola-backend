@@ -41,7 +41,6 @@ let package = Package(
       name: "PackController",
       dependencies: [
         "Packs",
-        "Utils",
         .product(name: "Vapor", package: "vapor"),
         .product(name: "VaporRouting", package: "vapor-routing"),
       ],
@@ -64,16 +63,6 @@ let package = Package(
       dependencies: [
         "Developers",
         .product(name: "Vapor", package: "vapor"),
-        .product(name: "VaporRouting", package: "vapor-routing"),
-      ],
-      swiftSettings: [
-        .enableExperimentalFeature("StrictConcurrency=complete")
-      ]
-    ),
-    .target(
-      name: "Utils",
-      dependencies: [
-        .product(name: "Tagged", package: "swift-tagged"),
         .product(name: "VaporRouting", package: "vapor-routing"),
       ],
       swiftSettings: [

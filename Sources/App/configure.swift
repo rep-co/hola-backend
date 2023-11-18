@@ -11,12 +11,14 @@ enum AppRoute {
 }
 
 let appRouter = OneOf {
-  Route(/AppRoute.pack) {
-    packRouter
+  Route(.case(AppRoute.pack)) {
+    Path { "packs" }
+    PackRouter()
   }
 
-  Route(/AppRoute.developers) {
-    developersRouter
+  Route(.case(AppRoute.developers)) {
+    Path { "developers" }
+    DevelopersRouter()
   }
 }
 
@@ -25,9 +27,9 @@ func appHandler(
   route: AppRoute
 ) async throws -> any AsyncResponseEncodable {
   switch route {
-  case let .pack(pack):
+  case .pack(let pack):
     return try await packHandler(request: request, route: pack)
-  case let .developers(developers):
+  case .developers(let developers):
     return try await developersHandler(request: request, route: developers)
   }
 }
