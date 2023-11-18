@@ -1,5 +1,3 @@
-import Tagged
-
 public struct Theme: Codable, Sendable {
   public let mainEmoji: String
   public let secondaryEmoji: String
