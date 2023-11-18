@@ -30,28 +30,32 @@ extension Developer {
       id: 1,
       name: "Sitora",
       description: "Product Manager",
-      image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/WAgzK9SuFEqk3w")!,
+      image: URL(
+        string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/WAgzK9SuFEqk3w")!,
       link: URL(string: "https://github.com/sitic96")!
     ),
     Developer(
       id: 2,
       name: "Gleb",
       description: "IOS Developer",
-      image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/gekQ3xdYCxXlCQ")!,
+      image: URL(
+        string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/gekQ3xdYCxXlCQ")!,
       link: URL(string: "https://github.com/LolleyBall")!
     ),
     Developer(
       id: 3,
       name: "Vadim",
       description: "IOS Developer",
-      image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/4yrTv4vTl9DuyQ")!,
+      image: URL(
+        string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/4yrTv4vTl9DuyQ")!,
       link: URL(string: "https://github.com/Mov4D")!
     ),
     Developer(
       id: 4,
       name: "Roman",
       description: "Backend Developer",
-      image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/BZrT2tG8FoVZlg")!,
+      image: URL(
+        string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/BZrT2tG8FoVZlg")!,
       link: URL(string: "https://github.com/rofle100lvl")!
     ),
     Developer(
@@ -65,14 +69,16 @@ extension Developer {
       id: 6,
       name: "Timur",
       description: "Backend Developer",
-      image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/Df1wKz08S3heSQ")!,
+      image: URL(
+        string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/Df1wKz08S3heSQ")!,
       link: URL(string: "https://github.com/tplaymeow")!
     ),
     Developer(
       id: 7,
       name: "Ivan",
       description: "QA",
-      image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/CT7pPR2rc8xF9w")!,
+      image: URL(
+        string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/CT7pPR2rc8xF9w")!,
       link: URL(string: "https://github.com/tplaymeow")!
     ),
   ]

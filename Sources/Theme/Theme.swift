@@ -17,23 +17,27 @@ public struct Theme: Codable, Sendable {
 }
 
 extension Theme {
-  public static let russiaITPower = Theme(mainEmoji: "💻",
-                                          secondaryEmoji: "🇷🇺",
-                                          tertiaryEmoji: "💪🏻"
+  public static let russiaITPower = Theme(
+    mainEmoji: "💻",
+    secondaryEmoji: "🇷🇺",
+    tertiaryEmoji: "💪🏻"
   )
 
-  public static let popcorn = Theme(mainEmoji: "🍿",
-                                    secondaryEmoji: "🍪",
-                                    tertiaryEmoji: "🎈"
-  )
-    
-  public static let vacation = Theme(mainEmoji: "🐳",
-                                     secondaryEmoji: "🛟",
-                                     tertiaryEmoji: "🚢"
+  public static let popcorn = Theme(
+    mainEmoji: "🍿",
+    secondaryEmoji: "🍪",
+    tertiaryEmoji: "🎈"
   )
 
-  public static let happyNewYear = Theme(mainEmoji: "🎅🏻",
-                                         secondaryEmoji: "🎄",
-                                         tertiaryEmoji: "🥳"
+  public static let vacation = Theme(
+    mainEmoji: "🐳",
+    secondaryEmoji: "🛟",
+    tertiaryEmoji: "🚢"
+  )
+
+  public static let happyNewYear = Theme(
+    mainEmoji: "🎅🏻",
+    secondaryEmoji: "🎄",
+    tertiaryEmoji: "🥳"
   )
 }
