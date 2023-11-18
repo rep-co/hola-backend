@@ -5,6 +5,7 @@ extension Pack {
     .acquaintanceship,
     .couple,
     .friends,
+    .selfKnowledge,
   ]
 }
 
