@@ -4,7 +4,7 @@ extension Pack {
   public static let all: IdentifiedArrayOf<Self> = [
     .acquaintanceship,
     .couple,
-    .frends,
+    .friends,
   ]
 }
 
