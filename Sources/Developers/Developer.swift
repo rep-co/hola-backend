@@ -28,14 +28,14 @@ extension Developer {
   public static let all: IdentifiedArrayOf<Developer> = [
     Developer(
       id: 1,
-      name: "Sitora", 
+      name: "Sitora",
       description: "Product Manager",
       image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/WAgzK9SuFEqk3w")!,
       link: URL(string: "https://github.com/sitic96")!
     ),
     Developer(
       id: 2,
-      name: "Gleb", 
+      name: "Gleb",
       description: "IOS Developer",
       image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/gekQ3xdYCxXlCQ")!,
       link: URL(string: "https://github.com/LolleyBall")!
@@ -49,21 +49,21 @@ extension Developer {
     ),
     Developer(
       id: 4,
-      name: "Roman", 
+      name: "Roman",
       description: "Backend Developer",
       image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/BZrT2tG8FoVZlg")!,
       link: URL(string: "https://github.com/rofle100lvl")!
     ),
     Developer(
       id: 5,
-      name: "Arina", 
+      name: "Arina",
       description: "Designer",
       image: URL(string: "https://tinyurl.com/4yrpzh6e")!,
       link: URL(string: "https://github.com/rofle100lvl")!  // TODO: Replace link
     ),
     Developer(
       id: 6,
-      name: "Timur", 
+      name: "Timur",
       description: "Backend Developer",
       image: URL(string: "https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/Df1wKz08S3heSQ")!,
       link: URL(string: "https://github.com/tplaymeow")!
