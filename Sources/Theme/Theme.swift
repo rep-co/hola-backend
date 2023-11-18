@@ -1,31 +1,39 @@
 import Tagged
 
-public struct Theme: Codable, Identifiable, Sendable {
-  public let id: Tagged<Self, Int>
-  public let name: String
-  public let emoji: String
+public struct Theme: Codable, Sendable {
+  public let mainEmoji: String
+  public let secondaryEmoji: String
+  public let tertiaryEmoji: String
 
   public init(
-    id: ID,
-    name: String,
-    emoji: String
+    mainEmoji: String,
+    secondaryEmoji: String,
+    tertiaryEmoji: String
   ) {
-    self.id = id
-    self.name = name
-    self.emoji = emoji
+    self.mainEmoji = mainEmoji
+    self.secondaryEmoji = secondaryEmoji
+    self.tertiaryEmoji = tertiaryEmoji
   }
 }
 
 extension Theme {
-  public static let russia = Theme(
-    id: 1,
-    name: "russia",
-    emoji: "🇷🇺"
+  public static let russiaITPower = Theme(mainEmoji: "🇷🇺",
+                                          secondaryEmoji: "💪🏻",
+                                          tertiaryEmoji: "💿"
   )
 
-  public static let cookie = Theme(
-    id: 2,
-    name: "cookie",
-    emoji: "🍪"
+  public static let popcorn = Theme(mainEmoji: "🍿",
+                                    secondaryEmoji: "🍪",
+                                    tertiaryEmoji: "🎈"
+  )
+    
+  public static let vacation = Theme(mainEmoji: "🐳",
+                                     secondaryEmoji: "🛟",
+                                     tertiaryEmoji: "🚢"
+  )
+
+  public static let happyNewYear = Theme(mainEmoji: "🎅🏻",
+                                         secondaryEmoji: "🎄",
+                                         tertiaryEmoji: "🥳"
   )
 }
