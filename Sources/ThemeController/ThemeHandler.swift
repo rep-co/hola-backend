@@ -7,7 +7,7 @@ public func themeHandler(
 ) async throws -> any AsyncResponseEncodable {
   switch route {
   case .index:
-    return Theme.cookie
+    return Theme.popcorn
   }
 }
 
