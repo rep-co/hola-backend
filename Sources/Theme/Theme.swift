@@ -1,4 +1,3 @@
-import Foundation
 import Tagged
 
 public struct Theme: Codable, Identifiable, Sendable {
@@ -18,15 +17,15 @@ public struct Theme: Codable, Identifiable, Sendable {
 }
 
 extension Theme {
-    public static let russia = Theme(
-        id: 1,
-        name: "russia",
-        emoji: "🇷🇺"
-    )
-    
-    public static let cookie = Theme(
-        id: 2,
-        name: "cookie",
-        emoji: "🍪"
-    )
+  public static let russia = Theme(
+    id: 1,
+    name: "russia",
+    emoji: "🇷🇺"
+  )
+
+  public static let cookie = Theme(
+    id: 2,
+    name: "cookie",
+    emoji: "🍪"
+  )
 }

@@ -22,11 +22,11 @@ let appRouter = OneOf {
     Path { "developers" }
     DevelopersRouter()
   }
-    
-    Route(.case(AppRoute.theme)) {
-      Path { "theme" }
-      ThemeRouter()
-    }
+
+  Route(.case(AppRoute.theme)) {
+    Path { "theme" }
+    ThemeRouter()
+  }
 }
 
 func appHandler(
@@ -39,7 +39,7 @@ func appHandler(
   case .developers(let developers):
     return try await developersHandler(request: request, route: developers)
   case .theme(let theme):
-      return try await themeHandler(request: request, route: theme)
+    return try await themeHandler(request: request, route: theme)
   }
 }
 
