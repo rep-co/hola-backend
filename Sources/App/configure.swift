@@ -1,6 +1,7 @@
 import CasePaths
 import DevelopersController
 import PackController
+import ThemeController
 import Vapor
 import VaporRouting
 
@@ -8,6 +9,7 @@ import VaporRouting
 enum AppRoute {
   case pack(PackRoute)
   case developers(DevelopersRoute)
+  case theme(ThemeRoute)
 }
 
 let appRouter = OneOf {
@@ -20,6 +22,11 @@ let appRouter = OneOf {
     Path { "developers" }
     DevelopersRouter()
   }
+    
+    Route(.case(AppRoute.theme)) {
+      Path { "theme" }
+      ThemeRouter()
+    }
 }
 
 func appHandler(
@@ -31,6 +38,8 @@ func appHandler(
     return try await packHandler(request: request, route: pack)
   case .developers(let developers):
     return try await developersHandler(request: request, route: developers)
+  case .theme(let theme):
+      return try await themeHandler(request: request, route: theme)
   }
 }
 
