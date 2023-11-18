@@ -1,5 +1,5 @@
 extension Pack {
-  public static let frends = Pack(
+  public static let friends = Pack(
     id: 3,
     title: "Открываем Друзей!",
     description:
