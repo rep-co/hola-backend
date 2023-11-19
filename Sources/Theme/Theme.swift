@@ -38,4 +38,16 @@ extension Theme {
     secondaryEmoji: "🎄",
     tertiaryEmoji: "🥳"
   )
+
+  public static let haloween = Theme(
+    mainEmoji: "🎃",
+    secondaryEmoji: "👻",
+    tertiaryEmoji: "👽"
+  )
+
+  public static let zombie = Theme(
+    mainEmoji: "🧠",
+    secondaryEmoji: "🧟‍♂️",
+    tertiaryEmoji: "🔪"
+  )
 }
