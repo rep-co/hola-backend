@@ -73,7 +73,8 @@ let package = Package(
     .target(
       name: "Theme",
       dependencies: [
-        .product(name: "Tagged", package: "swift-tagged")
+        .product(name: "Tagged", package: "swift-tagged"),
+        .product(name: "IdentifiedCollections", package: "swift-identified-collections"),
       ],
       swiftSettings: [
         .enableExperimentalFeature("StrictConcurrency=complete")
