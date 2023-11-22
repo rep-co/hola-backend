@@ -6,6 +6,9 @@ extension Pack {
     .couple,
     .friends,
     .selfKnowledge,
+    .coupleSecond,
+    .pathToDating,
+    .friendsSecond
   ]
 }
 
