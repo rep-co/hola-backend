@@ -8,11 +8,11 @@ public func themeHandler(
   switch route {
   case .index:
     return Theme.popcorn
-      
+
   case .theme(let id):
-      guard let theme = Theme.all[id: id]
-      else { throw Abort(.notFound) }
-      return theme
+    guard let theme = Theme.all[id: id]
+    else { throw Abort(.notFound) }
+    return theme
   }
 }
 
