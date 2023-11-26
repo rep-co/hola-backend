@@ -1,12 +1,3 @@
-//
-//  File.swift
-//
-//
-//  Created by Vadim Aleshin on 19.11.2023.
-//
-
-import Foundation
-
 extension Pack {
   public static let pathToDating = Pack(
     id: 7,
