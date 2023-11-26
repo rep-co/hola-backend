@@ -8,7 +8,7 @@ extension Pack {
     .selfKnowledge,
     .coupleSecond,
     .pathToDating,
-    .friendsSecond
+    .friendsSecond,
   ]
 }
 
