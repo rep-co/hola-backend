@@ -12,15 +12,31 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Setup variables
-      id: vars
-      run: echo "tag=${GITHUB_REF#refs/tags/releases/}" >> $GITHUB_OUTPUT
-
     - name: Login to Yandex Cloud Container Registry
       id: login-cr
       uses: yc-actions/yc-cr-login@v1
       with:
         yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
 
-    - run: echo $RELEASE_VERSION
-    - run: echo $GITHUB_REF
+    - name: Build, tag, and push image to Yandex Cloud Container Registry
+      env:
+        CR_REGISTRY: ${{ secrets.CR_REGISTRY }}
+        CR_REPOSITORY: ${{ secrets.CR_REPOSITORY }}
+      run: |
+        docker build -t cr.yandex/$CR_REGISTRY/$CR_REPOSITORY .
+        docker push cr.yandex/$CR_REGISTRY/$CR_REPOSITORY
+  
+    - name: Deploy Serverless Container
+      id: deploy-sls-container
+      uses: yc-actions/yc-sls-container-deploy@v2
+      with:
+        yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+        container-name: ${{ secrets.SERVERLESS_CONTAINER_NAME }}
+        folder-id: ${{ secrets.SERVERLESS_CONTAINER_FOLDER_ID }}
+        revision-service-account-id: ${{ secrets.SERVERLESS_CONTAINER_ACCOUNT_ID }}
+        revision-cores: 1
+        revision-memory: 1024Mb
+        revision-core-fraction: 100
+        revision-concurrency: 5
+        revision-image-url: cr.yandex/${{ secrets.CR_REGISTRY }}/${{ secrets.CR_REPOSITORY }}
+        revision-execution-timeout: 10
